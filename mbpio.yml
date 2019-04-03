@@ -1,0 +1,19 @@
+listen_on: 127.0.0.1:5002
+
+inputs:
+  # Goes to InputRegisters (R)
+  101: {pin: 24, poller: {type: DHT22, value: temperature}}
+  102: {pin: 24, poller: {type: DHT22, value: humidity}}
+  110: {pin: 22, poller: {type: LDR}}
+
+  # Goes to DiscreteInputs (R)
+  103: {pin: 23, poller: {type: PB}}
+
+outputs:
+
+  # Goes to HoldingRegisters (RW)
+  1: {pin: 12, pwm: {freq: 51000, cycle: 255}}
+  2: {pin: 13, pwm: {freq: 51000, cycle: 255}}
+
+  # Goes to Coils (RW)
+#  3: {pin: 23}
